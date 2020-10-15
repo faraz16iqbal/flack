@@ -32,7 +32,7 @@ class Root extends React.Component {
   componentDidMount() {
     console.log(this.props.isLoading);
     firebase.auth().onAuthStateChanged((user) => {
-      // console.log(user);
+      console.log(user);
       if (user) {
         this.props.setUser(user);
         this.props.history.push("/");

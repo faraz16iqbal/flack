@@ -1,7 +1,26 @@
 import React, { Component } from "react";
+import { Segment, Comment } from "semantic-ui-react";
+import firebase from "../../firebase";
+import MessagesHeader from "./MessagesHeader";
+import MessageForm from "./MessageForm";
 
-export default class Messages extends Component {
+class Messages extends Component {
+  state = {
+    messagesRef: firebase.database().ref("messages"),
+  };
   render() {
-    return <div>Messages</div>;
+    const { messagesRef } = this.state;
+    return (
+      <React.Fragment>
+        <MessagesHeader />
+        <Segment>
+          <Comment.Group className="messages">{/* {Messages} */}</Comment.Group>
+        </Segment>
+
+        <MessageForm messages={messagesRef} />
+      </React.Fragment>
+    );
   }
 }
+
+export default Messages;

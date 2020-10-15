@@ -7,10 +7,6 @@ class UserPanel extends Component {
     user: this.props.currentUser,
   };
 
-  //   componentDidMount() {
-  //     this.setState({ user: this.props.currentUser });
-  //   }
-
   dropdownOptions = () => [
     {
       key: "user",
@@ -40,7 +36,6 @@ class UserPanel extends Component {
       });
   };
   render() {
-    // console.log(this.props.currentUser);
     const { user } = this.state;
     return (
       <Grid style={{ background: "#4c3c4c" }}>
